@@ -1,0 +1,20 @@
+ORG E000h   ; *          
+MVI A,03h   ; 3Eh 03h    
+MVI B,05h   ; 06h 05h    
+MVI C,00h   ; 0Eh 00h    
+MVI D,05h   ; 16h 05h    
+MVI E,04h   ; 1Eh 04h    
+CMP B       ; B8h        
+JZ LABEL1   ; CAh 00h E0h
+JMP LABEL2  ; C3h XXh XXh
+:LABEL1     ;            
+MOV A,D     ; 7Ah        
+SUB E       ; 93h        
+MOV C,A     ; 4Fh        
+JMP END     ; C3h XXh XXh
+:LABEL2     ;            
+MOV A,D     ; 7Ah        
+ADD E       ; 83h        
+MOV C,A     ; 4Fh        
+JMP END     ; C3h 00h E0h
+:END        ;            

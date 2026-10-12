@@ -1,0 +1,13 @@
+ORG A000h   ; *          
+:INICIO     ;            
+IN 02h      ; DBh 02h    
+STA AAAAh   ; 32h AAh AAh
+IN 02h      ; DBh 02h    
+STA AAABh   ; 32h ABh AAh
+LDA AAAAh   ; 3Ah AAh AAh
+MOV B,A     ; 47h        
+LDA AAABh   ; 3Ah ABh AAh
+SUB B       ; 90h        
+STA AAACh   ; 32h ACh AAh
+OUT 03h     ; D3h 03h    
+JMP INICIO  ; C3h XXh XXh

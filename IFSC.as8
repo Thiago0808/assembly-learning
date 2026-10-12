@@ -1,0 +1,20 @@
+ORG A000h   ; *          
+:INICIO     ;            
+IN 02h      ; DBh 02h    
+STA 0001h   ; 32h 01h 00h
+IN 02h      ; DBh 02h    
+STA 0002h   ; 32h 02h 00h
+IN 02h      ; DBh 02h    
+STA 0003h   ; 32h 03h 00h
+IN 02h      ; DBh 02h    
+STA 0004h   ; 32h 04h 00h
+LDA 0001h   ; 3Ah 01h 00h
+OUT 01h     ; D3h 01h    
+LDA 0002h   ; 3Ah 02h 00h
+OUT 01h     ; D3h 01h    
+LDA 0003h   ; 3Ah 03h 00h
+OUT 01h     ; D3h 01h    
+LDA 0004h   ; 3Ah 04h 00h
+OUT 01h     ; D3h 01h    
+            ;            
+JPM INICIO  ;            

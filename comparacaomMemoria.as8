@@ -1,0 +1,32 @@
+ORG E000h   ; *          
+MVI A,03h   ; 3Eh 03h    
+STA 0000h   ; 32h 00h 00h
+MVI A,04h   ; 3Eh 04h    
+STA 0001h   ; 32h 01h 00h
+MVI A,00h   ; 3Eh 00h    
+STA 0002h   ; 32h 02h 00h
+MVI A,05h   ; 3Eh 05h    
+STA 0003h   ; 32h 03h 00h
+MVI A,04h   ; 3Eh 04h    
+STA 0004h   ; 32h 04h 00h
+LDA 0001h   ; 3Ah 01h 00h
+MOV B,A     ; 47h        
+LDA 0000h   ; 3Ah 00h 00h
+CMP B       ; B8h        
+JZ LABEL1   ; CAh 27h E0h
+JMP LABEL2  ; C3h 35h E0h
+:LABEL1     ;            
+LDA 0004h   ; 3Ah 04h 00h
+MOV E,A     ; 5Fh        
+LDA 0003h   ; 3Ah 03h 00h
+SUB E       ; 93h        
+STA 0002h   ; 32h 02h 00h
+JMP END     ; C3h 43h E0h
+:LABEL2     ;            
+LDA 0004h   ; 3Ah 04h 00h
+MOV E,A     ; 5Fh        
+LDA 0003h   ; 3Ah 03h 00h
+ADD E       ; 83h        
+STA 0002h   ; 32h 02h 00h
+JMP END     ; C3h 43h E0h
+:END        ;            

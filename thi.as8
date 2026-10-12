@@ -1,0 +1,24 @@
+ORG A000h   ; *          
+:INICIO     ;            
+MVI B,54h   ; 06h 54h    
+MOV A,B     ; 78h        
+STA 0001h   ; 32h 01h 00h
+MVI C,68h   ; 0Eh 68h    
+MOV A,C     ; 79h        
+STA 0002h   ; 32h 02h 00h
+MVI D,69h   ; 16h 69h    
+MOV A,D     ; 7Ah        
+STA 0003h   ; 32h 03h 00h
+LDA 0001h   ; 3Ah 01h 00h
+OUT 01h     ; D3h 01h    
+LDA 0002h   ; 3Ah 02h 00h
+OUT 01h     ; D3h 01h    
+LDA 0003h   ; 3Ah 03h 00h
+OUT 01h     ; D3h 01h    
+LDA 0004h   ; 3Ah 04h 00h
+OUT 01h     ; D3h 01h    
+LDA 0005h   ; 3Ah 05h 00h
+OUT 01h     ; D3h 01h    
+LDA 0006h   ; 3Ah 06h 00h
+OUT 01h     ; D3h 01h    
+JPM INICIO  ;            

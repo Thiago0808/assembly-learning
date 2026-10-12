@@ -1,0 +1,9 @@
+ORG E000h   ; *          
+:INICIO     ;            
+IN 02h      ; DBh 02h    
+MOV B,A     ; 47h        
+MVI A,00h   ; 3Eh 00h    
+OUT 00h     ; D3h 00h    
+MOV A,B     ; 78h        
+OUT 03h     ; D3h 03h    
+JMP INICIO  ; C3h 00h E0h
