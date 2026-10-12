@@ -1,2 +1,2 @@
-# assembly-learning
-My Assembly codes that I did in college when learning about it
+# Assembly Learning
+My Assembly projects from college, back when I was learning the language
